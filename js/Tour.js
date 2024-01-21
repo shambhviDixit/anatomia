@@ -30,7 +30,9 @@ AFRAME.registerComponent("tour", {
       src: `./assets/pattern-${selectedCard}.png`,
       color: "#fff"
     });
-  },
+
+    
+  },//  ,
   createCards: function() {
     
     const thumbNailsRef = [
@@ -46,8 +48,8 @@ AFRAME.registerComponent("tour", {
       },
 
       {
-        id: "alimentary canal",
-        title: "Alimentary Canal",
+        id: "intestine",
+        title: "Intestine",
         url: "./assets/intestine.jpg"
       },
 
