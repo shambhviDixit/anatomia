@@ -18,7 +18,7 @@ AFRAME.registerComponent("cursor-listener", {
         const placesId = [
           "heart",
           "lungs",
-          "alimentary canal",
+          "intestine",
           "kidney"
          
         ];
@@ -44,7 +44,7 @@ AFRAME.registerComponent("cursor-listener", {
   },
   handlePlacesListState: function() {
     const id = this.el.getAttribute("id");
-    const placesId = ["heart", "lungs", "alimentary canal", "kidney"];
+    const placesId = ["heart", "lungs", "intestine", "kidney"];
     if (placesId.includes(id)) {
       const placeContainer = document.querySelector("#places-container");
       placeContainer.setAttribute("cursor-listener", {
