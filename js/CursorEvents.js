@@ -51,7 +51,7 @@ AFRAME.registerComponent("cursor-listener", {
         selectedItemId: id
       });
       this.el.setAttribute("material", {
-        color:"#D76B30",
+        color:"#CB4335",
         opacity: 1
       });
     }
@@ -68,7 +68,7 @@ AFRAME.registerComponent("cursor-listener", {
           const id = el.getAttribute("id");
           if (id == selectedItemId) {
             el.setAttribute("material", {
-              color: "#0077CC",
+              color: "#2E8B57",
               opacity: 1
             });
           }
