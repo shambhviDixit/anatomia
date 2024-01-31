@@ -4,13 +4,15 @@ AFRAME.registerComponent("tour", {
     selectedCard: { type: "string", default: "#card1" },
     zoomAspectRatio: { type: "number", default: 1 }
   },
-  init: function() {
+  init: function () {
     this.placesContainer = this.el;
+ //this.markerContainer=this.el;
     this.cameraEl = document.querySelector("#camera");
     this.createCards();
+
   },
 
-  tick: function() {
+  tick: function () {
     const { state } = this.el.getAttribute("tour");
 
     if (state === "view") {
@@ -18,23 +20,43 @@ AFRAME.registerComponent("tour", {
       this.showView();
     }
   },
-  hideEl: function(elList) {
+  hideEl: function (elList) {
     elList.map(el => {
       el.setAttribute("visible", false);
     });
   },
-  showView: function() {
+  showView: function () {
     const { selectedCard } = this.data;
     const skyEl = document.querySelector("#main-container");
     skyEl.setAttribute("material", {
-      src: `./assets/pattern-${selectedCard}.png`,
-      color: "#fff"
+      
+      color: "thistle",
     });
-
-    
+    const box=document.querySelector('#marker-container')
+    box.setAttribute("visible",true)
+    box.setAttribute("material", {
+      src: `./assets/pattern-${selectedCard}.png`,
+      color:"white",
+    });
+   
+    //const boxEl = document.querySelector("#marker-container");
+    // boxEl.setAttribute("material", {
+    // src: `./assets/pattern-${selectedCard}.png`,
+    //   color: "#fff"
+    // });
   },//  ,
-  createCards: function() {
-    
+
+
+
+ 
+
+
+
+
+
+
+  createCards: function () {
+
     const thumbNailsRef = [
       {
         id: "heart",
@@ -63,7 +85,7 @@ AFRAME.registerComponent("tour", {
     for (var item of thumbNailsRef) {
       const posX = prevoiusXPosition + 25;
       const posY = 10;
-      const posZ = -40;
+      const posZ = -30;
       const position = { x: posX, y: posY, z: posZ };
       prevoiusXPosition = posX;
 
@@ -81,7 +103,7 @@ AFRAME.registerComponent("tour", {
       this.placesContainer.appendChild(borderEl);
     }
   },
-  createBorder: function(position, id) {
+  createBorder: function (position, id) {
     const entityEl = document.createElement("a-entity");
     entityEl.setAttribute("id", id);
     entityEl.setAttribute("visible", true);
@@ -92,13 +114,13 @@ AFRAME.registerComponent("tour", {
     });
     entityEl.setAttribute("position", position);
     entityEl.setAttribute("material", {
-      color: "#0077CC",
+      color: "#2E8B57",
       opacity: 1
     });
     entityEl.setAttribute("cursor-listener", {});
     return entityEl;
   },
-  createThumbNail: function(item) {
+  createThumbNail: function (item) {
     const entityEl = document.createElement("a-entity");
     entityEl.setAttribute("visible", true);
     entityEl.setAttribute("geometry", {
@@ -109,13 +131,13 @@ AFRAME.registerComponent("tour", {
     entityEl.setAttribute("cursor-listener", {});
     return entityEl;
   },
-  createTitleEl: function(position, item) {
+  createTitleEl: function (position, item) {
     const entityEl = document.createElement("a-entity");
     entityEl.setAttribute("text", {
       font: "exo2bold",
       align: "center",
       width: 60,
-      color: "#e65100",
+      color: "#0B5345",
       value: item.title
     });
     const elPosition = position;
@@ -123,6 +145,12 @@ AFRAME.registerComponent("tour", {
     entityEl.setAttribute("position", elPosition);
     entityEl.setAttribute("visible", true);
     return entityEl;
-  }, 
+  },
+  //markers don't need to start here  :)
+  
+ 
+    
+  
   
 });
+
