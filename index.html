@@ -14,10 +14,20 @@
   </head>
   <body>
     <a-scene id="main-scene">
-      <a-sky id="main-container" radius="5000" color="#98DAFC"></a-sky>
+      <a-sky id="main-container" radius="5000" color="#98FB98">
 
+      </a-sky>
+
+      
+      <a-plane id="marker-container" position="0 1 -5" rotation="0 0 0" width="4" height="4"width="80" color="#7BC8A4" visible="false"></a-plane>
       <!-- Places Container -->
-      <a-entity id="places-container" cursor-listener tour></a-entity>
+      
+  
+        
+      
+      <a-entity id="places-container" cursor-listener tour>
+
+      </a-entity>
      
       <!-- Different Side View of the Places -->
       <a-entity
@@ -32,12 +42,12 @@
         <a-entity
           id="app-title"
           position="0 0.73 -1"
-          text="font: exo2bold; align: center; width: 2; color: #000; value: It's time to study Anatomy!"
+          text="font: exo2bold; align: center; width: 2; color:#154360; value: It's time to study Anatomy!"
         >
           <a-entity
             id="app-subtitle"
             position="0 -0.1 0"
-            text="font: dejavu; align: center; width: 1; color: #0F184E; value:Anatomia"
+            text="font: dejavu; align: center; width: 1.5; color:#7B241C; value:Anatomia"
           ></a-entity>
         </a-entity>
 
